@@ -12,7 +12,7 @@ echo 'Количество вставляемых элементов: ' . $k . '
 
 function insertEl(int $k, array $arr) {
     for ($q = 1; $q <= $k; $q++) {
-        $el = mt_rand(1, 13);
+        $el = mt_rand(1, 28);
         echo 'Вставляем значение: ' . $el . '<br>';
         for ($i = 0; $i < count($arr); $i++) {
             if ($arr[$i] > $el) {
