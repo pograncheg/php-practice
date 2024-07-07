@@ -19,32 +19,36 @@ echo 'Исходный массив: <br>' . '<pre>';
 print_r($arr);
 echo '</pre>';
 
-$count = 0;
-$sum = 0;
-for ($q = 0; $q < $m; $q++) {
-    if ($arr[0][$q] > 0) {
-        $sum += $arr[0][$q];
-        $count++;
-    }
-}
-$minAverage = $count ? $sum / $count : 0;
-$num = 0;
-for ($i = 1; $i < $n; $i++) {
+function minAverageOfPlus(array $arr) {
     $count = 0;
     $sum = 0;
-    for ($j = 0; $j < $m; $j++) {
-        if ($arr[$i][$j] > 0) {
-            $sum += $arr[$i][$j];
+    for ($q = 0; $q < count($arr[0]); $q++) {
+        if ($arr[0][$q] > 0) {
+            $sum += $arr[0][$q];
             $count++;
         }
     }
-    if ($count) {
-        if ($sum / $count < $minAverage) {
-            $minAverage = $sum / $count;
-            $num = $i;
+    $minAverage = $count ? $sum / $count : 0;
+    $num = 0;
+    for ($i = 1; $i < count($arr); $i++) {
+        $count = 0;
+        $sum = 0;
+        for ($j = 0; $j < count($arr[$i]); $j++) {
+            if ($arr[$i][$j] > 0) {
+                $sum += $arr[$i][$j];
+                $count++;
+            }
         }
+        if ($count) {
+            if ($sum / $count < $minAverage) {
+                $minAverage = $sum / $count;
+                $num = $i;
+            }
+        }
+    
     }
-
+    return $num;
 }
 
-echo 'Номер необходимой строки: ' . $num;
+
+echo 'Номер необходимой строки: ' . minAverageOfPlus($arr);
