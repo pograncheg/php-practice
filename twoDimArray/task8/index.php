@@ -17,3 +17,6 @@ echo 'Исходный массив: <br>' . '<pre>';
 print_r($arr);
 echo '</pre>';
 
+$countRow = count($arr);
+$countCol = count($arr[0]);
+
