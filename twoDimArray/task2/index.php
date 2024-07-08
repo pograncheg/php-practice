@@ -1,8 +1,9 @@
 <?php
 $n = mt_rand(3,5);
 $m = mt_rand(3,5);
-echo $n . ' x ' . $m . '<br>';
-function randomArray($n, $m) {
+// echo $n . ' x ' . $m . '<br>';
+function randomArray($n, $m) 
+{
     $arr = [];
     for ($i = 0; $i < $n; $i++) {
         $arr[$i] = range(-1, -1 + $m - 1);
@@ -19,7 +20,8 @@ echo 'Исходный массив: <br>' . '<pre>';
 print_r($arr);
 echo '</pre>';
 
-function minAverageOfPlus(array $arr) {
+function minAverageOfPlus(array $arr) 
+{
     $count = 0;
     $sum = 0;
     for ($q = 0; $q < count($arr[0]); $q++) {

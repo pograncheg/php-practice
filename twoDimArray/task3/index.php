@@ -2,7 +2,8 @@
 $n = mt_rand(3,5);
 $m = mt_rand(3,5);
 // echo $n . ' x ' . $m . '<br>';
-function randomArray(int $n, int $m) {
+function randomArray(int $n, int $m) 
+{
     $arr = [];
     for ($i = 0; $i < $n; $i++) {
         $arr[$i] = range(1, 1 + $m - 1);
@@ -26,7 +27,8 @@ function randomArray(int $n, int $m) {
     return $arr;
 }
 
-function isSort(array $arr) {
+function isSort(array $arr) 
+{
     $asc = true;
     $desc = true;
     for ($i = 0; $i < count($arr)-1; $i++) {
@@ -54,7 +56,8 @@ echo 'Исходный массив: <br>' . '<pre>';
 print_r($arr);
 echo '</pre>';
 
-function minElInArr(array $arr) {
+function minElInArr(array $arr) 
+{
     $min = $arr[0];
     for ($i = 1; $i < count($arr); $i++) {
         if ($arr[$i] < $min) {
@@ -64,7 +67,8 @@ function minElInArr(array $arr) {
     return $min;
 }
 
-function maxElInArr(array $arr) {
+function maxElInArr(array $arr) 
+{
     $max = $arr[0];
     for ($i = 1; $i < count($arr); $i++) {
         if ($arr[$i] > $max) {
@@ -74,7 +78,8 @@ function maxElInArr(array $arr) {
     return $max;
 }
 
-function maxMinInOrderedLine(array $arr) {
+function maxMinInOrderedLine(array $arr)
+{
     for ($i = 0; $i < count($arr); $i++) {
         if (isSort($arr[$i])) {
             $max = maxElInArr($arr[$i]);
