@@ -19,7 +19,7 @@ echo 'Исходный массив: <br>' . '<pre>';
 print_r($arr);
 echo '</pre>';
 
-function isPrimeNumber($num)
+function isPrimeNumber(int $num)
 {
     if ($num <=1) {
         return false;
@@ -33,7 +33,7 @@ function isPrimeNumber($num)
     return $count == 2 ? true : false;
 }
 
-function main($arr)
+function main(array $arr)
 {
     $countCol = count($arr[0]);
     $countRow = count($arr);
