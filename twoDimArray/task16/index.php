@@ -46,10 +46,7 @@ function main(array $arr)
 {
     $countCol = count($arr[0]);
     $countRow = count($arr);
-    $maxElInRow = [];
-    $indexMaxEls = [];
-    $rowOrder = [];
-    $rowForInsert = 0;
+     $indexMaxEls = [];
     for ($i = 0; $i < $countRow; $i++) {
         $maxEl = $arr[$i][0];
         $indexMaxEl = 0;
@@ -59,8 +56,7 @@ function main(array $arr)
                 $indexMaxEl = $j;
             }
         }
-        $maxElInRow[$i] = $maxEl;
-        $indexMaxEls[$i] = $indexMaxEl;
+         $indexMaxEls[$i] = $indexMaxEl;
     }
 
     return mySort($arr, $indexMaxEls);
